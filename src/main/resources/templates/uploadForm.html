@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org">
+
+<body>
+
+    <div th:if="${message}">
+        <h2 th:text="${message}" />
+    </div>
+
+    <div>
+        <form method="POST" enctype="multipart/form-data" action="/">
+            <table>
+                <tr>
+                    <td>
+                        <form:label path="file">Select a file to upload</form:label>
+                    </td>
+                    <td><input type="file" name="file" /></td>
+                </tr>
+                <tr>
+                    <td><input type="submit" value="Submit" /></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+    <!-- display final result message of the text file -->
+    <div th:if="${count}">
+        <p> Word count = <span th:text="${count}"></span></p>
+        <p> Average word length = <span th:text="${avarage}"></span></p>
+        <p th:each="words: ${wordsOfLength}">
+            Number of words of length <span th:text="${words.key}"></span> is <span th:text="${words.value}"></span>
+        </p>
+        <p>
+            The most frequently occurring word length is <span th:text="${mostOccuringWordLength}"></span>, for word
+            lengths of <span th:text="${forWordLengths}"></span>
+        </p>
+    </div>
+
+</body>
+
+</html>
