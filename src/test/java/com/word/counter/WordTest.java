@@ -8,7 +8,7 @@ import java.util.Map;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
-import com.word.component.Word;
+import com.word.counter.component.Word;
 
 @SpringBootTest
 class WordTest {

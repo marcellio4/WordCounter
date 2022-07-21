@@ -1,4 +1,4 @@
-package com.word.component;
+package com.word.counter.component;
 
 import java.util.ArrayList;
 import java.util.Collections;
