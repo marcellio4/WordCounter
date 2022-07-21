@@ -5,6 +5,7 @@
 You need to have maven install on your machine
 
 * Install maven on your machine
+* Install lombok on your IDE if you do not have
 * Git clone this repository
 * run command `mvn spring-boot:run`
 * open your browser and type `http://localhost:8080/`
