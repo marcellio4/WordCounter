@@ -23,7 +23,7 @@ public class Word {
     /**
      * Calculate avarage of all words
      * 
-     * @return
+     * @return float
      */
     public float calculateAvarageLength() {
         int total = 0;
@@ -41,8 +41,7 @@ public class Word {
      * @return Map<Integer, Long>
      */
     public Map<Integer, Long> findWordsOfLength() {
-        return words.stream()
-                .map(word -> word.length())
+        return words.stream().map(word -> word.length())
                 .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
     }
 
@@ -69,17 +68,25 @@ public class Word {
                 maxResultList.add(entry.getKey());
             }
         }
+        return createTextforMostOccuring(maxResultList);
+    }
+
+    /**
+     * Create text for word lengths occuring in format for example(4 & 5)
+     * 
+     * @param result
+     * @return String
+     */
+    private String createTextforMostOccuring(List<Integer> result) {
         StringBuilder stringBuilder = new StringBuilder();
-        int maxSize = maxResultList.size();
+        int maxSize = result.size();
         for (int i = 0; i < maxSize; i++) {
-            stringBuilder.append(maxResultList.get(i));
+            stringBuilder.append(result.get(i));
             if (i != maxSize - 1) {
                 stringBuilder.append(" & ");
             }
         }
         return stringBuilder.toString();
     }
-
-
 
 }
