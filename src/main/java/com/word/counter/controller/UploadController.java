@@ -37,7 +37,7 @@ public class UploadController {
                             .flatMap(Arrays::stream).collect(Collectors.toList());
             List<String> cleanWords = new ArrayList<>();
             words.forEach(w -> {
-                String clean = w.replaceAll("[.*#]", "");
+                String clean = w.replaceAll("[.*#;,:]", "");
                 cleanWords.add(clean);
             });
 

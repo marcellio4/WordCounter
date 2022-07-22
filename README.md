@@ -11,7 +11,7 @@ You need to have maven install on your machine
 * open your browser and type `http://localhost:8080/`
 
 ### Some explanation
-Word is not if contains one of the special characters `.*#`
+Word is not if contains one of the special characters `.*#;,:`
 
 work has been done using Apache Maven 3.6.0 and Java version: 11.0.13
 
